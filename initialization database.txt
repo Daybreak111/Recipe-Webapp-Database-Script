@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS user_account(
+   acc_id VARCHAR(20) NOT NULL,
+   acc_num VARCHAR(20) NOT NULL,
+   pwd VARCHAR(20) NOT NULL,
+   name VARCHAR(20) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   phone VARCHAR(20) NOT NULL,
+   gender INT(1) NOT NULL,
+   height VARCHAR(20) NOT NULL,
+   weight VARCHAR(20) NOT NULL,
+   age INT(4) NOT NULL,
+   exp_weight VARCHAR(20) NOT NULL,
+   BMI VARCHAR(20),
+   BMR VARCHAR(20),
+   avoidance_list VARCHAR(200),
+   state INT(1) NOT NULL,
+   create_time DATETIME NOT NULL,
+   expired_time DATETIME,
+   PRIMARY KEY ( acc_id )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS recipes(
+   rec_id VARCHAR(20) NOT NULL,
+   name VARCHAR(64) NOT NULL,
+   ingredient_list VARCHAR(200),
+   calorie VARCHAR(20) NOT NULL,
+   description VARCHAR(200),
+   type INT(1) NOT NULL,
+   likes INT(10) NOT NULL,
+   create_time DATETIME NOT NULL,
+   expired_time DATETIME,
+   PRIMARY KEY ( rec_id )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS ingredients(
+   ing_id VARCHAR(20) NOT NULL,
+   name VARCHAR(64) NOT NULL,
+   calorie VARCHAR(20) NOT NULL,
+   description VARCHAR(200),
+   recipe_list VARCHAR(200),
+   create_time DATETIME NOT NULL,
+   expired_time DATETIME,
+   PRIMARY KEY ( ing_id )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
